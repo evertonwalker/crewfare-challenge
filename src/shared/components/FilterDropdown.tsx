@@ -52,15 +52,15 @@ export function FilterDropdown({
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "flex items-center justify-center gap-2 px-4 py-3 bg-white border border-purple-500 rounded-lg text-gray-900 font-medium transition-all duration-200 w-full h-[48px]",
-          isOpen && "ring-2 ring-purple-200"
+          "flex items-center justify-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-900 font-medium transition-all duration-200 w-full h-[48px]",
+          isOpen && "ring-2 ring-blue-200"
         )}
       >
         <Filter className="w-4 h-4 text-blue-400" />
         <span>Filters</span>
         <div className="w-6 h-5 flex items-center justify-center">
           {checkedCount > 0 ? (
-            <span className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded-full min-w-[20px] text-center">
+            <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full min-w-[20px] text-center">
               {checkedCount}
             </span>
           ) : (
@@ -124,7 +124,7 @@ export function FilterDropdown({
             <div className="px-4 py-3 border-t border-gray-100">
               <button
                 onClick={handleSave}
-                className="w-full bg-purple-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200"
+                className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200"
               >
                 Save
               </button>

@@ -1,0 +1,85 @@
+/* Classes base reutilizáveis */
+.eventNameLabel {
+  display: flex;
+  padding: 6px 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  margin: 0 20px;
+}
+
+.eventNameTitle {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.gradientLine {
+  flex: 1;
+  height: 1px;
+}
+
+/* Variações de cor para o label */
+.eventNameLabelTeal {
+  border: 1px solid #00C2A6;
+  background: #E5F9F6;
+}
+
+.eventNameLabelPurple {
+  border: 1px solid #6707FD;
+  background: #F3F0FF;
+}
+
+/* Variações de cor para o título */
+.eventNameTitleTeal {
+  color: #00C2A6;
+}
+
+.eventNameTitlePurple {
+  color: #6707FD;
+}
+
+/* Variações de cor para as linhas gradientes */
+.gradientLineLeftTeal {
+  background: linear-gradient(90deg, rgba(0, 194, 166, 0.00) 0%, #00C2A6 100%);
+}
+
+.gradientLineRightTeal {
+  background: linear-gradient(90deg, #00C2A6 0%, rgba(0, 194, 166, 0.00) 100%);
+}
+
+.gradientLineLeftPurple {
+  background: linear-gradient(90deg, rgba(103, 7, 253, 0.00) 0%, #6707FD 100%);
+}
+
+.gradientLineRightPurple {
+  background: linear-gradient(90deg, #6707FD 0%, rgba(103, 7, 253, 0.00) 100%);
+}
+
+/* Estilos personalizados para o scrollbar horizontal */
+.scrollContainer::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollContainer::-webkit-scrollbar-track {
+  background: #F0F0F0;
+  border-radius: 3px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb {
+  background: #C0C0C0;
+  border-radius: 3px;
+  min-width: 60px;
+}
+
+.scrollContainer::-webkit-scrollbar-thumb:hover {
+  background: #A0A0A0;
+}
+
+/* Para Firefox */
+.scrollContainer {
+  scrollbar-width: thin;
+  scrollbar-color: #C0C0C0 #F0F0F0;
+}
