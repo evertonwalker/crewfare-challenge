@@ -1,6 +1,8 @@
 import React from 'react';
 import { Calendar, Eye, FileText } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import './BookingCard.css';
+import { formatCutOffDate } from '@/domain/home/utils/dateUtils';
 
 interface BookingCardProps {
   rfpName: string;
@@ -23,14 +25,6 @@ export function BookingCard({
   onViewDocument,
   className
 }: BookingCardProps) {
-  // Função para formatar a data de cut-off
-  const formatCutOffDate = (dateString: string) => {
-    const date = new Date(dateString);
-    const month = date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
-    const day = date.getDate();
-    return { month, day };
-  };
-
   const { month, day } = formatCutOffDate(cutOffDate);
 
   return (
@@ -52,11 +46,11 @@ export function BookingCard({
 
         {/* Right Side - Cut-Off Date */}
         <div className="flex flex-col items-center">
-          <div className="w-12 h-14 bg-blue-100 rounded-lg flex flex-col items-center justify-center mb-1">
-            <span className="text-xs font-medium text-blue-600">{month}</span>
-            <span className="text-lg font-bold text-blue-800">{day}</span>
+          <div className="w-12 h-14 bg-white border border-gray-200 rounded-lg flex flex-col items-center gap-1 mb-1 shadow-sm overflow-hidden">
+            <span className="monthSmall">{month}</span>
+            <span className="dayNumber text-lg font-bold text-blue-600 leading-none">{day}</span>
           </div>
-          <span className="text-xs text-gray-500">Cut-Off Date</span>
+          <span className="text-xs text-gray-700 font-medium">Cut-Off Date</span>
         </div>
       </div>
 

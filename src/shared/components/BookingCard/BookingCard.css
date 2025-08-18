@@ -1,0 +1,23 @@
+/* BookingCard Component Styles */
+/* Este arquivo pode ser utilizado para estilos customizados no futuro */
+
+.monthSmall {
+  font-size: 0.75rem;
+  background: linear-gradient(0deg, rgba(62, 140, 255, 0.25) 0%, rgba(62, 140, 255, 0.25) 100%);
+  color: #3E8CFF;
+  line-height: 1;
+  margin: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.dayNumber {
+  width: 36px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,39 +1,42 @@
 import React, { useState } from 'react';
-import { FilterInput, FilterDropdown, BookingCard } from '@/shared/components';
+import { FilterInput, FilterDropdown } from '@/shared/components';
+import { FilterContentProps } from '../../types/filters.types';
 
-export function FilterContent() {
+export function FilterContent({ availableStatus, onFiltersChange }: FilterContentProps) {
   const [searchValue, setSearchValue] = useState('');
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+  const [selectedStatuses, setSelectedStatuses] = useState<string[]>([]);
 
   const handleSearchChange = (value: string) => {
     setSearchValue(value);
-    console.log('Search value changed:', value);
+    onFiltersChange({ search: value, searchStatus: selectedStatuses });
   };
 
-  const handleFiltersSave = (filters: string[]) => {
-    setSelectedFilters(filters);
-    console.log('Filters saved:', filters);
+  const handleStatusesSave = (statuses: string[]) => {
+    setSelectedStatuses(statuses);
+    onFiltersChange({ search: searchValue, searchStatus: statuses });
   };
+
+  // Convert available status to the format expected by FilterDropdown
+  const statusOptions = availableStatus.map(status => ({
+    id: status,
+    label: status.charAt(0).toUpperCase() + status.slice(1), // Capitalize first letter
+    checked: selectedStatuses.includes(status)
+  }));
 
   return (
     <div className="mb-8">
-      {/* Container dos filtros */}
       <div className="flex flex-col sm:flex-row gap-4">
         <FilterInput
           value={searchValue}
           onChange={handleSearchChange}
-          placeholder="Search..."
-          className="flex-1"
+          placeholder="Search"
+          className="w-full md:w-[280px]"
         />
         
         <FilterDropdown
           title="RFP STATUS"
-          options={[
-            { id: 'active', label: 'Active', checked: false },
-            { id: 'closed', label: 'Closed', checked: true },
-            { id: 'canceled', label: 'Canceled', checked: false }
-          ]}
-          onSave={handleFiltersSave}
+          options={statusOptions}
+          onSave={handleStatusesSave}
         />
       </div>
     </div>
